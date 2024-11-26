@@ -1,0 +1,9 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "chaos:item/fates_influence_gui"
+  },
+  "gui_light": "front",
+  "display": {}
+}
