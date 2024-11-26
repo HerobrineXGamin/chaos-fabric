@@ -3,9 +3,9 @@
 	"id": "chaos",
 	"version": "${version}",
 	"name": "Chaos",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Let Chaos Ensue.",
 	"authors": [
-		"Me!"
+		"HerobrineXGamin: Chaos Emperor"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
