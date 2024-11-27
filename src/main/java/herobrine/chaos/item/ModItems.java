@@ -19,9 +19,6 @@ public class ModItems {
     public static final Item MALEDICTUM = registerItem("maledictum",
             new Maledictum(new FabricItemSettings().group(ModItemGroup.CHAOS).fireproof()));
 
-    public static final Item GOD_EATER = registerItem("god_eater",
-            new GodEater(ToolMaterials.NETHERITE, 6, -3f, new FabricItemSettings().group(ModItemGroup.CHAOS).fireproof()));
-
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(Chaos.MOD_ID, name), item);
     }
