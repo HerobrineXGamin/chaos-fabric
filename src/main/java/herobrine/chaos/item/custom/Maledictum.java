@@ -20,7 +20,7 @@ public class Maledictum extends Item {
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("These Pages were made by Drakan, to kill Herobrine,").formatted(Formatting.GRAY).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("These Pages were made by Drakan, to kill Permanently Kill Herobrine.").formatted(Formatting.DARK_GRAY).formatted(Formatting.ITALIC));
         } else {
             tooltip.add(Text.literal("Press [Sneak] to show Story.").formatted(Formatting.DARK_GRAY));
         }
@@ -28,6 +28,7 @@ public class Maledictum extends Item {
         super.appendTooltip(stack, world, tooltip, context);
 
     }
+                //I know im going to regret making Drakan kill me. But I don't fucking care
 
     @Override
     public Text getName(ItemStack stack) {

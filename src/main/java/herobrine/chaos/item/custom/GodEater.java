@@ -10,8 +10,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.text.Text;
@@ -22,11 +22,12 @@ import xyz.amymialee.mialeemisc.util.MialeeText;
 
 import java.util.List;
 
-public class FatesInfluence extends SwordItem {
+public class GodEater extends AxeItem {
+
     public final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
     private final float attackDamage;
 
-    public FatesInfluence(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
+    public GodEater(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(ToolMaterials.NETHERITE, attackDamage, attackSpeed, settings);
         this.attackDamage = ToolMaterials.NETHERITE.getAttackDamage() + attackDamage;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
@@ -35,6 +36,12 @@ public class FatesInfluence extends SwordItem {
         builder.put(ReachEntityAttributes.REACH, new EntityAttributeModifier("Attack range", 1.3D, EntityAttributeModifier.Operation.ADDITION));
         builder.put(ReachEntityAttributes.ATTACK_RANGE, new EntityAttributeModifier("Attack range", 1.3D, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
+    }
+
+    public GodEater(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings, Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers, float attackDamage1) {
+        super(material, attackDamage, attackSpeed, settings);
+        this.attributeModifiers = attributeModifiers;
+        this.attackDamage = attackDamage1;
     }
 
 
@@ -50,8 +57,7 @@ public class FatesInfluence extends SwordItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("It is an Aspect of Death,").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
-            tooltip.add(Text.literal("Which turns Peace to Violence.").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("No More shall be set ablaze by your Kind...").formatted(Formatting.DARK_PURPLE).formatted(Formatting.ITALIC));
         } else {
             tooltip.add(Text.literal("Press [Sneak] to show Description.").formatted(Formatting.DARK_GRAY));
         }
@@ -60,7 +66,7 @@ public class FatesInfluence extends SwordItem {
     }
 
     @Override
-    public Text getName(ItemStack stack) {return MialeeText.withColor(super.getName(stack), 0x680D0D);
+    public Text getName(ItemStack stack) {return MialeeText.withColor(super.getName(stack), 0x492472);
     }
 
 }

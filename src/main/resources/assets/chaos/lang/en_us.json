@@ -1,5 +1,15 @@
 {
   "item.chaos.fates_influence": "Fate's Influence",
+  "item.chaos.god_eater": "God Eater",
+  "item.chaos.empty_fates_influence": "Empty Fate's Influence",
   "item.chaos.forsaken_gemstone": "Forsaken Gemstone",
-  "item.chaos.maledictum": "Maledictum"
+  "item.chaos.maledictum": "Maledictum",
+  "item.chaos.totem_of_chaos": "Totem of Chaos",
+
+  "item.chaos.chaos_emperor_mask": "Chaos Emperor Mask",
+
+  "enchantment.chaos.bleeding_edge": "Bleeding Edge",
+  "enchantment.chaos.annihilation": "Annihilation",
+
+  "itemGroup.chaos.blood": "Chaos"
 }

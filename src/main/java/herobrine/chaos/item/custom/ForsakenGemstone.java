@@ -22,8 +22,8 @@ public class ForsakenGemstone extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("A Forlorn Gem, which it's Malevolent Intent draws close to").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
-            tooltip.add(Text.literal("People Wishing for Great Power and Mayhem.").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("A Forlorn Gem, which it's Malevolent Intent draws close to People").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("That wish for Great Power and Mayhem.").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
         } else {
             tooltip.add(Text.literal("Press [Sneak] to show Story.").formatted(Formatting.DARK_GRAY));
         }
