@@ -2,6 +2,8 @@ package herobrine.chaos.item.custom;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -10,9 +12,12 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import xyz.amymialee.mialeemisc.util.MialeeText;
 
+import java.awt.*;
 import java.util.List;
 
 public class Maledictum extends Item {
+
+    private float attackDamage;
 
     public Maledictum(Settings settings) {
         super(settings);
@@ -27,6 +32,16 @@ public class Maledictum extends Item {
 
         super.appendTooltip(stack, world, tooltip, context);
 
+    }
+
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if(attacker instanceof PlayerEntity player) {
+            player.spawnSweepAttackParticles();
+            target.damage(DarknessCutDamageSource.playerRip(player), this.attackDamage);
+        }
+        return super.postHit(stack, target, attacker);
     }
                 //I know im going to regret making Drakan kill me. But I don't fucking care
 

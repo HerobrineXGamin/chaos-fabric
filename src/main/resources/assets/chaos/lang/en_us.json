@@ -9,5 +9,7 @@
 
   "enchantment.chaos.bleeding_edge": "Bleeding Edge",
 
+  "death.attack.darkness_cut.player": "%s's essence was converted to darkness.",
+
   "itemGroup.chaos.blood": "Chaos"
 }
