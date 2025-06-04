@@ -2,6 +2,7 @@ package herobrine.chaos.item.custom;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.particle.ParticleTextureSheet;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -26,6 +27,8 @@ public class Maledictum extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(Screen.hasShiftDown()) {
             tooltip.add(Text.literal("These Pages were made by Drakan, to kill Permanently Kill Herobrine.").formatted(Formatting.DARK_GRAY).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("").formatted(Formatting.DARK_GRAY).formatted(Formatting.ITALIC));
+            tooltip.add(Text.literal("Pages sharper than most steel.").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
         } else {
             tooltip.add(Text.literal("Press [Sneak] to show Story.").formatted(Formatting.DARK_GRAY));
         }
@@ -33,7 +36,6 @@ public class Maledictum extends Item {
         super.appendTooltip(stack, world, tooltip, context);
 
     }
-
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {

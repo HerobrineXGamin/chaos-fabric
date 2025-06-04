@@ -4,8 +4,15 @@
   "item.chaos.forsaken_gemstone": "Forsaken Gemstone",
   "item.chaos.maledictum": "Maledictum",
   "item.chaos.totem_of_chaos": "Totem of Chaos",
+  "item.chaos.faded_cinder": "Faded Cinder",
+  "item.chaos.umbralium_ingot": "Umbralium Ingot",
+  "item.chaos.darksign_effigy": "Darksign Effigy",
+  "item.chaos.rune_of_death": "Rune of Death",
+  "item.chaos.darkworld_surrender": "Darkworld Surrender",
 
-  "item.chaos.chaos_emperor_mask": "Chaos Emperor Mask",
+  "block.chaos.umbralium_debris": "Umbralium Debris",
+
+  "chaos.subtitles.item.fates_influence.hit": "Fate's Influence hits",
 
   "enchantment.chaos.bleeding_edge": "Bleeding Edge",
 

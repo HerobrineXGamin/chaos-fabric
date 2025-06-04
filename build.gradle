@@ -11,8 +11,8 @@ base {
 }
 
 repositories {
-	maven { url 'https://repo.spongepowered.org/maven/' }
 	maven { url 'https://maven.terraformersmc.com/' }    // mod menu & trinkets
+	maven { url 'https://repo.spongepowered.org/maven/' }
 	maven { url 'https://maven.ladysnake.org/releases' } // trinkets
 	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' } // geckolib
 	maven { url 'https://maven.willbl.dev/releases' }    // mialee misc

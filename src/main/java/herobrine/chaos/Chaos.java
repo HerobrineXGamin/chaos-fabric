@@ -1,6 +1,11 @@
 package herobrine.chaos;
 
+import herobrine.chaos.block.ModBlocks;
 import herobrine.chaos.item.ModItems;
+import herobrine.chaos.registry.ChaosDamageSources;
+import herobrine.chaos.registry.ChaosEnchantments;
+import herobrine.chaos.registry.ChaosSoundEvents;
+import herobrine.chaos.registry.ChaosStatusEffects;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,11 +18,12 @@ public class Chaos implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ChaosDamageSources.register();
+		ChaosStatusEffects.register();
+		ChaosEnchantments.register();
+		ModBlocks.registerModBlocks();
 
 		ModItems.registerModItems();
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Let Chaos Ensue...");
 	}
 }

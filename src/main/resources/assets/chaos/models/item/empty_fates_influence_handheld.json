@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "chaos:item/empty_fates_influence"
+		"1": "chaos:item/empty_fates_influence_handheld"
 	},
 	"elements": [
 		{

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "chaos:item/fates_influence",
-		"particle": "chaos:item/fates_influence"
+		"0": "chaos:item/fates_influence_handheld",
+		"particle": "chaos:item/fates_influence_handheld"
 	},
 	"elements": [
 		{

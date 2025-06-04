@@ -1,0 +1,8 @@
+{
+  "item.fates_influence.hit": {
+    "sounds": [
+      "chaos:item/fates_influence_hit"
+    ],
+    "subtitle": "chaos.subtitles.item.fates_influence.hit"
+  }
+}

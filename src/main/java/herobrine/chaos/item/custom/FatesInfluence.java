@@ -8,6 +8,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import xyz.amymialee.mialeemisc.util.MialeeText;
@@ -42,25 +44,39 @@ public class FatesInfluence extends SwordItem {
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot equipmentSlot) {
         return equipmentSlot == EquipmentSlot.MAINHAND ? attributeModifiers : super.getAttributeModifiers(equipmentSlot);
     }
+
+
+    @Override
+    public Text getName(ItemStack stack) {
+        return MialeeText.withColor(super.getName(stack), 0x680D0D);
+    }
+
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (!attacker.isOnGround()) {
+            applyReversedKnockback(target, attacker);
+            target.velocityModified = true;
+        }
         return super.postHit(stack, target, attacker);
     }
+    private void applyReversedKnockback(LivingEntity target, LivingEntity attacker) {
+        Vec3d attackerPos = attacker.getPos();
+        Vec3d targetPos = target.getPos();
+        double xDiff = targetPos.x - attackerPos.x;
+        double zDiff = targetPos.z - attackerPos.z;
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if(Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("It is an Aspect of Death,").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
-            tooltip.add(Text.literal("Which turns Peace to Violence.").formatted(Formatting.DARK_RED).formatted(Formatting.ITALIC));
-        } else {
-            tooltip.add(Text.literal("Press [Sneak] to show Description.").formatted(Formatting.DARK_GRAY));
-        }
+        double distance = Math.sqrt(xDiff * xDiff + zDiff * zDiff);
 
-        super.appendTooltip(stack, world, tooltip, context);
+        EntityAttributeInstance reachAttribute = attacker.getAttributeInstance(ReachEntityAttributes.REACH);
+        double maxReach = reachAttribute == null ? 5.0 : reachAttribute.getValue();
+        double maxStrength = 0.8;
+        double strength = Math.min(0.8, Math.max(0.2, maxStrength * (distance / maxReach)));
+
+        target.setVelocity(0, 0, 0);
+
+        double xKnockback = xDiff * strength;
+        double zKnockback = zDiff * strength;
+
+        target.takeKnockback(strength, xKnockback, zKnockback);
     }
-
-    @Override
-    public Text getName(ItemStack stack) {return MialeeText.withColor(super.getName(stack), 0x680D0D);
-    }
-
 }

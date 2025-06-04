@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "chaos:block/umbralium_debris_top",
+    "side": "chaos:block/umbralium_debris"
+  }
+}
