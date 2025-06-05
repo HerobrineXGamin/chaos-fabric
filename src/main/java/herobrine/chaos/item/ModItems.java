@@ -14,6 +14,8 @@ public class ModItems {
             new FatesInfluence(ToolMaterials.NETHERITE, 5, -2.4f, new FabricItemSettings().group(ModItemGroup.CHAOS).fireproof()));
     public static final Item EMPTY_FATES_INFLUENCE = registerItem("empty_fates_influence",
             new EmptyFatesInfluence(ToolMaterials.NETHERITE, 5, -2.4f, new FabricItemSettings().group(ModItemGroup.CHAOS).fireproof()));
+    public static final Item DARKWORLD_BANISHMENT = registerItem("darkworld_banishment",
+            new DarkworldBanishment());
     public static final Item FORSAKEN_GEMSTONE = registerItem("forsaken_gemstone",
             new ForsakenGemstone(new FabricItemSettings().group(ModItemGroup.CHAOS).fireproof().maxCount(1)));
     public static final Item UMBRALIUM_INGOT = registerItem("umbralium_ingot",

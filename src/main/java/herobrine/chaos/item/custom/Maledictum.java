@@ -45,7 +45,7 @@ public class Maledictum extends Item {
         }
         return super.postHit(stack, target, attacker);
     }
-                //I know im going to regret making Drakan kill me. But I don't fucking care
+                //I know im going to regret making Drakan kill me. But quite frankly, I dont give a shit
 
     @Override
     public Text getName(ItemStack stack) {

@@ -12,6 +12,7 @@
   "client": [
     "ItemRendererAccessor",
     "ItemRendererMixin",
-    "ModelLoaderMixin"
+    "ModelLoaderMixin",
+    "LivingEntityMixin"
   ]
 }
